@@ -26,7 +26,7 @@ SECRET_KEY = 'pe937h=*%-yavrsm07r=k0s#ef6r=wazovm0yvt)shm!p&u#)n'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ftl-apis.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
