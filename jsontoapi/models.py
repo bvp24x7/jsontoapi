@@ -18,8 +18,6 @@ class Activity_periods(models.Model):
     end_time        = models.DateTimeField()
 
 
-    # def __str__(self):
-    #     return self.name
-
+   
 
 
