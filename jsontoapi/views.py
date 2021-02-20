@@ -23,17 +23,10 @@ def apipost(request):
         serializer.save()
     return Response(serializer.data)
 
-# def apiform(request):
-#     jsnodict = {'members':[]}
-#     user1 = User1.objects.values()
-#     for user in user1:
-#         user['Activityperiods']=0
-#         print(user)
-#         jsnodict['members'].append(user)
 
 class FormatList(APIView):
     def get(self,request):
-        jsnodict = {'members':[]}
+        jsnodict = {'ok':True,'members':[]}
         user12 = User1.objects.values()
         for user in user12:
             print('u1',user)
@@ -44,6 +37,6 @@ class FormatList(APIView):
             for activity in activities:
                 user['Activity_periods'].append(activity) 
             jsnodict['members'].append(user)
-        print(jsnodict['members'])
+        print(jsnodict)
 
-        return Response(jsnodict['members'],status = status.HTTP_202_ACCEPTED)
+        return Response(jsnodict,status = status.HTTP_202_ACCEPTED)

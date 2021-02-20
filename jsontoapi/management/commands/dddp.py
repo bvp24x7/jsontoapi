@@ -2,11 +2,14 @@ from django.core.management.base import BaseCommand, CommandError
 from jsontoapi.models import *
 import json
 import dateutil.parser as parser
+from pathlib import Path
 
-f = open('/home/prasad/Documents/toyapp/ftl/jsontoapi/TestJSON.json','r')
 
-output = json.load(f)
-print(output) 
+BASE_DIR = Path(__file__).resolve().parent.parent
+with open(BASE_DIR/'TestJSON.json','r') as f:
+
+    output = json.load(f)
+    print(output) 
 
 class Command(BaseCommand):
     help = 'Json loading'
@@ -17,9 +20,9 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
   
 
-        # from pathlib import Path
+        # 
 
-        # BASE_DIR = Path(__file__).resolve().parent.parent
+        # 
         # print(BASE_DIR/'TestJSON.json')
         for member in output['members']:
             print(member['id'])
